@@ -605,15 +605,13 @@ font-size: 3rem;
 padding-bottom: 20%;
 z-index:1;
 transition: transform 0.5s;
+
 }
 #realisations:hover {
   z-index:1;
   transform:  translate(-50%, -50%) scale(1.2); /* Grossissement au survol */
 }
 @media screen and (max-width: 600px) {
-
-}
-	
   #realisations {
     font-size: 2rem;
     padding-bottom: 30%;
