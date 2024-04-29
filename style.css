@@ -605,9 +605,11 @@ font-size: 3rem;
 padding-bottom: 20%;
 z-index:1;
 transition: transform 0.5s;
+  width: fit-content; /* Ajustez la largeur à celle du contenu */
+  height: fit-content; /
 }
-
 #realisations:hover {
+  z-index:1;
   transform:  translate(-50%, -50%) scale(1.2); /* Grossissement au survol */
 }
 @media screen and (max-width: 600px) {
