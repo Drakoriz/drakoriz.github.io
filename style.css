@@ -606,7 +606,7 @@ padding-bottom: 20%;
 z-index:1;
 transition: transform 0.5s;
 }
-	#realisations2{
+#realisations2{
 padding-top:30%;
 position: absolute;
   left: 50%;
@@ -615,13 +615,12 @@ position: absolute;
 font-size: 3rem; 
 padding-bottom: 20%;
 z-index:1;
-transition: transform 0.5s;
 }
 #realisations:hover {
   transform:  translate(-50%, -50%) scale(1.2); /* Grossissement au survol */
 }
 @media screen and (max-width: 600px) {
-	  #realisations2 {
+#realisations2 {
     font-size: 2rem;
     padding-bottom: 30%;
   }
