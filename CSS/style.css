@@ -688,9 +688,6 @@ height: 65%;
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-    user-select: none;          
-  -webkit-touch-callout: none;/* empêche le menu contextuel iOS */
-  -webkit-user-select: none;
 background-color: black; /* fond si la vidéo tarde à charger */
 z-index: -1;    
 }
