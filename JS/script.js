@@ -247,7 +247,7 @@ function toggleCentralInfo(item) {
         const htmlList = '<ul>' + listItems.map(li => `<li>${li.trim()}</li>`).join('') + '</ul>';
         return `
             <div class="central-video-text">
-                <video src="${videoSrc}" autoplay muted loop></video>
+                <video src="${videoSrc}" autoplay muted loop playsinline ></video>
                 <div class="central-text">${htmlList}</div>
             </div>
         `;
