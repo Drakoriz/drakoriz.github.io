@@ -137,7 +137,8 @@
     font-size: 14px;
   }
     .title {
-       transform: translateX(-25%) translateY(0);
+    color:blue;
+       transform: translateX(25%) translateY(0);
   }
 }
 
