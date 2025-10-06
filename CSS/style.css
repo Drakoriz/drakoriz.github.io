@@ -55,6 +55,34 @@
   gap: 5px; /* espace entre les éléments */
 }
 
+/* Titre fixe en haut et centré */
+.title {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    font-family: Didot;
+  font-size:18px;
+    color: #000;
+    z-index: 501;
+    text-align: center;
+    margin: 0;
+  font-weight:700;
+    text-transform:uppercase;
+      margin-bottom:14px;
+    line-height:1.15;
+    /* Transition pour l'apparition/disparition */
+    opacity: 1;
+    transition: opacity 0.6s ease, transform 0.5s ease;
+}
+
+
+.title.hidden {
+    opacity: 0;                  /* Rend invisible */
+    transform: translateX(-50%) translateY(-20px); /* Légèrement vers le haut */
+    pointer-events: none;        /* Empêche les interactions */
+}
+
 /* Logo à gauche */
 .logo img {
   margin-top: 10px;
@@ -106,6 +134,14 @@
 
   .lang-btn {
     font-size: 14px;
+  }
+    .title {
+    position: absolute;      /* on le sort du flux centré */
+    top: 50%;                /* centré verticalement par rapport à la navbar */
+    right: 10px;             /* à droite avec un petit padding */
+    transform: translateY(-50%); /* ajuste le centrage vertical */
+    text-align: right;       /* texte aligné à droite */
+    font-size: 16px;         /* éventuellement réduire un peu la taille */
   }
 }
 
@@ -401,29 +437,8 @@ pointer-events: none;
   
 }
 
-/* Titre fixe en haut et centré */
-.title {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(0);
-    font-family: Didot;
-    font-size: 2rem;
-    color: #000;
-    z-index: 501;
-    text-align: center;
-    margin: 0;
 
-    /* Transition pour l'apparition/disparition */
-    opacity: 1;
-    transition: opacity 0.6s ease, transform 0.5s ease;
-}
 
-.title.hidden {
-    opacity: 0;                  /* Rend invisible */
-    transform: translateX(-50%) translateY(-20px); /* Légèrement vers le haut */
-    pointer-events: none;        /* Empêche les interactions */
-}
 
 
 /* Container centré et limité en largeur */
@@ -619,14 +634,6 @@ height: 65%;
   align-self:flex-start;
 }
 
-.title{
-  font-size:18px;
-  line-height:1.15;
-  text-transform:uppercase;
-  margin-bottom:14px;
-  font-weight:700;
-  color:#111;
-}
 
 
 
