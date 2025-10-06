@@ -781,21 +781,26 @@ font-family: Didot;
 font-size: 1rem;
 }
   /* Masquer les vidéos dans central-info */
-  .competence-video video {
-    pointer-events: none;
+  .central-video-text video {
+    display: none;
   }
+
   /* Ajuster la section texte pour qu'elle occupe tout l'espace disponible */
   .central-video-text {
     flex-direction: column; /* empile le texte verticalement */
     align-items: center;
     justify-content: center;
   }
+
   .central-video-text .central-text {
     width: 100%; /* prend toute la largeur disponible */
     text-align: center; /* centre le texte */
   }
 }
+@media (max-width: 1024px) {
+  /* Désactive toute interaction sur les vidéos */
 
+}
 
 /* Réalisations */
 
