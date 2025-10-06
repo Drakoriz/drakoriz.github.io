@@ -688,6 +688,9 @@ height: 65%;
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+    user-select: none;          /* empêche la sélection/tap long */
+  -webkit-touch-callout: none;/* empêche le menu contextuel iOS */
+  -webkit-user-select: none;
 }
 
 /* l’overlay sombre */
