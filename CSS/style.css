@@ -152,20 +152,22 @@ body {
 background-color: white;
       font-family: "Montserrat";
 
-  overflow-x: hidden !important;
-}
-html {
   overflow-x: hidden;
-  max-width: 100%;
-}
-* {
-  max-width: 100vw; /* Rien ne dépasse la largeur viewport */
 }
 
 body.loading {
   position: fixed;   /* bloque le scroll */
   width: 100%;       /* évite un petit “jump” horizontal */
   overflow: hidden;
+}
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* 3. Container principal */
+* {
+  max-width: 100vw; /* Rien ne dépasse la largeur viewport */
 }
 
 /* SIDEBARRRRRRRRRRRRRRRRRRRRRRR */
@@ -468,6 +470,17 @@ pointer-events: none;
     color: #000; /* Couleur du texte : noir */
 }
 /* Paragraphes centrés et responsive */
+.centered {
+
+  font-family: Montserrat;
+  margin-right: 25%;
+  width: 60%; /* Prend toute la largeur du container parent */
+  max-width: 100%; /* Largeur maximale pour plus de lisibilité */
+  line-height: 1.55; /* Hauteur de ligne pour améliorer la lecture */
+  color:#555; /* Couleur du texte légèrement moins noire */
+  font-size: 1rem; /* Taille de texte standard */
+}
+
 
 #deco{
   position:absolute;
