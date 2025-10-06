@@ -136,12 +136,7 @@
     font-size: 14px;
   }
     .title {
-    position: absolute;      /* on le sort du flux centré */
-    top: 50%;                /* centré verticalement par rapport à la navbar */
-    right: 10px;             /* à droite avec un petit padding */
-    transform: translateY(-50%); /* ajuste le centrage vertical */
-    text-align: right;       /* texte aligné à droite */
-    font-size: 16px;         /* éventuellement réduire un peu la taille */
+    margin-left:10px;           /* à droite avec un petit padding */
   }
 }
 
