@@ -203,7 +203,6 @@ pointer-events: none;
 
 /* Style du bouton langue */
 .lang-btn {
-
   background: transparent;
   border: 2px solid #fff;
   color: black;
@@ -439,8 +438,6 @@ pointer-events: none;
 
 
 
-
-
 /* Container centré et limité en largeur */
 .container {
   max-width: 900px; /* Largeur maximale pour éviter que le contenu ne s’étale trop */
@@ -454,40 +451,40 @@ pointer-events: none;
 }
 /* Présentation */
 /* Label identité positionné naturellement à gauche */
-#identity {
-  margin-left: -750px; /* Force cet élément à s’aligner à gauche du container flex */
-  font-family: Didot; /* Police du label */
-  font-size: 1.25rem; /* Taille du texte */
-  color: #000; /* Couleur du texte : noir */
-}
 
+
+#identity {
+  margin-left: 0; /* supprimer le margin fixe */
+  align-self: flex-start; /* aligne le texte à gauche du container */
+    font-family: Didot; /* Police du label */
+    font-size: 1.25rem; /* Taille du texte */
+    color: #000; /* Couleur du texte : noir */
+}
 /* Paragraphes centrés et responsive */
 .centered {
 
   font-family: Montserrat;
-  margin-left: -250px;
+  margin-left: -25%;
   width: 60%; /* Prend toute la largeur du container parent */
-  max-width: 700px; /* Largeur maximale pour plus de lisibilité */
+  max-width: 100%; /* Largeur maximale pour plus de lisibilité */
   line-height: 1.55; /* Hauteur de ligne pour améliorer la lecture */
   color:#555; /* Couleur du texte légèrement moins noire */
   font-size: 1rem; /* Taille de texte standard */
 }
-@media (max-width:900px){
-.container {margin-top:20%}
-.centered {font-size: 0.7rem}
-}
+
+
 #deco{
   position:absolute;
   flex: 1; 
   width: 20%; 
-  top: 150px;
+  top: 25%;
 height: 65%;
-  right: 200px;
+  right: 10%;
 
 }
 
 /* Ajout de media queries pour rendre la vidéo responsive */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
   #deco {
     display: none;
     right: 0;
