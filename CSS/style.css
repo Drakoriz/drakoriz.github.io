@@ -154,7 +154,7 @@ background-color: white;
 
   overflow-x: hidden;
 }
-}
+
 body.loading {
   position: fixed;   /* bloque le scroll */
   width: 100%;       /* évite un petit “jump” horizontal */
@@ -278,7 +278,7 @@ pointer-events: none;
 /* Bouton fermer */
 .close-icon {
     position: absolute;
-    top: -50px;          /* remonte le bouton */
+    bottom: 400px;          /* remonte le bouton */
     right: 150px;       /* à droite */
     font-size: 30px;
     cursor: pointer;
@@ -433,7 +433,6 @@ pointer-events: none;
   position: relative; /* Permet de positionner des éléments enfants en absolute relativement à ce container */
   padding: 2rem; /* Ajoute un espace interne de 2rem autour du contenu */
   box-sizing: border-box; /* Inclut le padding dans la largeur et hauteur totales */
-overflow-x: hidden; 
   
 }
 
@@ -462,17 +461,6 @@ overflow-x: hidden;
     color: #000; /* Couleur du texte : noir */
 }
 /* Paragraphes centrés et responsive */
-.centered {
-
-  font-family: Montserrat;
-  margin-left: -25%;
-  width: 60%; /* Prend toute la largeur du container parent */
-  max-width: 100%; /* Largeur maximale pour plus de lisibilité */
-  line-height: 1.55; /* Hauteur de ligne pour améliorer la lecture */
-  color:#555; /* Couleur du texte légèrement moins noire */
-  font-size: 1rem; /* Taille de texte standard */
-}
-
 
 #deco{
   position:absolute;
