@@ -784,6 +784,9 @@ font-size: 1rem;
   .central-video-text video {
     display: none;
   }
+    .competence-video video {
+      pointer-events: none; /* la vidéo ne reçoit plus le clic */
+    }
 
   /* Ajuster la section texte pour qu'elle occupe tout l'espace disponible */
   .central-video-text {
@@ -797,10 +800,7 @@ font-size: 1rem;
     text-align: center; /* centre le texte */
   }
 }
-@media (max-width: 1024px) {
-  /* Désactive toute interaction sur les vidéos */
 
-}
 
 /* Réalisations */
 
