@@ -136,9 +136,12 @@
   .lang-btn {
     font-size: 14px;
   }
-    .title {
-    color:blue;
-       transform: translateX(5%) translateY(0);
+  .title {
+    top: 5%;
+    right: 10%;           /* à 5px du bord droit */
+    left: auto;            /* supprimer le left à 50% */
+    transform: translateY(-50%); /* pour centrer verticalement */
+    text-align: right;     /* texte aligné à droite */
   }
 }
 
