@@ -784,9 +784,7 @@ font-size: 1rem;
   .central-video-text video {
     display: none;
   }
-    .competence-video video {
-      pointer-events: none; /* la vidéo ne reçoit plus le clic */
-    }
+
 
   /* Ajuster la section texte pour qu'elle occupe tout l'espace disponible */
   .central-video-text {
@@ -799,6 +797,13 @@ font-size: 1rem;
     width: 100%; /* prend toute la largeur disponible */
     text-align: center; /* centre le texte */
   }
+}
+.click-overlay {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: transparent; /* invisible */
+    cursor: pointer;
+    z-index: 10; /* au-dessus de la vidéo mais sous le titre */
 }
 
 
