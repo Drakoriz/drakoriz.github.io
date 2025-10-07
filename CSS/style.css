@@ -1052,7 +1052,13 @@ margin-top: 10%;
 font-size: 1rem;
 }
 }
+@media (max-width: 800px) {
 
+.modal-text h2 {
+margin-top: 15%;
+font-size: 1rem;
+}
+}
 /* Extra */
   /* Conteneur principal */
   .contact-container {
