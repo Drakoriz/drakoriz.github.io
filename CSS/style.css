@@ -936,11 +936,12 @@ font-size: 1rem;
     font-size: 12px;
   }
   .card-keywords { font-size: 0.5rem; }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* max 3 colonnes */
+
+  }
 }
 
-@media (max-width: 700px) {
-  .card-keywords { font-size: 0.3rem; }
-}
 
 
 /* Modal overlay */
