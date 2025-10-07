@@ -982,13 +982,13 @@ font-size: 1rem;
 }
 
 .modal-text h2 {
-  margin-top: 0;
+  margin-top: 5%;
   color: #111;
   font-family: Montserrat, sans-serif;
 }
 
 .modal-text p {
-  margin-top: 10px;
+  margin-top: 5%;
   line-height: 1.55;
   font-family: Montserrat, sans-serif;
   color: #555;
@@ -998,8 +998,8 @@ font-size: 1rem;
 /* Bouton fermer */
 .close {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 5%;
+  right: 5%;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
@@ -1012,7 +1012,15 @@ font-size: 1rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
-
+@media (max-width: 1000px) {
+.modal-text p {
+font-size:0.7rem;
+}
+.modal-text h2 {
+margin-top: 10%;
+font-size: 1rem;
+}
+}
 
 /* Extra */
 .contact-container {
