@@ -349,3 +349,23 @@ window.addEventListener('scroll', () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("video.lazy");
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        video.play();
+        obs.unobserve(video); // plus besoin d'observer
+      }
+    });
+  }, { threshold: 0.25 }); // 25% visible pour lancer la vidéo
+
+  videos.forEach(video => {
+    video.pause();        // on s'assure qu'elles ne jouent pas avant
+    observer.observe(video);
+  });
+});
+
+
