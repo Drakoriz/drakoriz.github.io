@@ -1023,51 +1023,103 @@ font-size: 1rem;
 }
 
 /* Extra */
-.contact-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f0f4f8;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  max-width: 800px;
-  margin: 30px auto;
-  font-family: Montserrat;
-}
+  /* Conteneur principal */
+  .contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), #f5f4f0);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin: 30px auto;
+    padding: 25px 40px;
+    font-family: 'Montserrat';
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 1200px;
+  }
 
-.text-content {
-  flex: 1;
-  padding-right: 20px;
-}
+  .contact-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
 
-.video-container {
-  flex: 0 0 300px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
+  /* Texte */
+  .text-content {
+    flex: 1;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #333;
+  }
 
-.video-container video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+  /* Vidéo */
+  .video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    flex: 1;
+    max-width: 500px;
+  }
 
-.email-button {
-  color: black;        
-  font-family: Didot;
-  text-decoration: none;  
-  transition: color 0.3s, transform 0.2s;
-  display: inline-block;   /* permet de gérer correctement le margin */
-  margin-top: 15px;        /* espace au-dessus du bouton */
-  font-size: 1.5rem;  
-}
+  .video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    filter: brightness(0.95);
+    transition: transform 0.3s;
+      pointer-events: none;
+  }
 
+  .video-container video:hover {
+    transform: scale(1.03);
+  }
 
-.email-button:hover {
-  color: grey;  /* bleu très clair / presque blanc */
-  transform: scale(1.05); /* petit effet zoom au survol */
-}
+  /* Bouton */
+  .email-button {
+    color: black;
+    font-family: 'Didot', serif;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s, background 0.3s;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+  }
 
+  .email-button:hover {
+    color: #555;
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+  }
 
+  /* Image de remplacement pour mobile */
+  .main-background-poster {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    z-index: -1;
+  }
+
+  /* Responsive mobile */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .video-container {
+      display: none;
+    }
+
+    .main-background-poster {
+      display: block;
+    }
+  }
