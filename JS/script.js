@@ -1,4 +1,3 @@
-// ===== Sélecteurs =====
 const menuIcon = document.querySelector('.menu-icon');
 const sidebar = document.getElementById('mySidebar');
 const closeBtn = document.getElementById('closeBtn');
@@ -10,18 +9,15 @@ const preloader = document.getElementById('preloader');
 const titles = document.querySelectorAll('.title');
 const sections = document.querySelectorAll('.section');
 
-// ===== Preloader =====
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
   if (preloader) {
-    document.body.classList.add('loading'); // bloque le scroll
+    document.body.classList.add('loading'); 
 
-    // Laisse un petit temps pour être sûr que tout est stable avant le fade-out
     setTimeout(() => {
-      preloader.classList.add('hidden'); // déclenche le fade-out CSS
-    }, 290); // léger délai optionnel pour éviter un flash brutal
+      preloader.classList.add('hidden'); 
+    }, 290); 
 
-    // Quand la transition CSS du fade-out est terminée
     preloader.addEventListener('transitionend', () => {
       preloader.style.display = 'none';
       document.body.classList.remove('loading');
@@ -30,7 +26,6 @@ window.addEventListener('load', () => {
   }
 });
 
-// ===== Sidebar =====
 menuIcon.addEventListener('click', () => {
   sidebar.classList.add('active');
   backdrop.classList.add('active');
@@ -49,13 +44,13 @@ backdrop.addEventListener('click', () => {
   sidebar.setAttribute('aria-hidden', 'true');
 });
 
-// ===== Hover nav-links =====
+
 navLinks.forEach(link => {
   link.addEventListener('mouseenter', () => link.classList.add('hovered'));
   link.addEventListener('mouseleave', () => link.classList.remove('hovered'));
 });
 
-// ===== Switch Langue =====
+
 let currentLang = localStorage.getItem("lang") || "fr";
 
 document.querySelectorAll("[data-fr]").forEach(el => {
@@ -74,10 +69,10 @@ switchBtn.addEventListener("click", () => {
   document.documentElement.setAttribute("lang", currentLang);
 });
 
-// ===== Scroll to Top (animation fluide) =====
+
 function scrollToTop() {
   const startY = window.pageYOffset;
-  const duration = 1200; // durée du scroll (ms)
+  const duration = 1200; 
   let startTime = null;
 
   function easeInOutQuad(t, b, c, d) {
@@ -98,7 +93,7 @@ function scrollToTop() {
   requestAnimationFrame(animateScroll);
 }
 
-// ===== Boîte animée =====
+
 if (box) {
   box.addEventListener('click', function () {
     const screenHeight = window.innerHeight;
@@ -134,7 +129,6 @@ if (box) {
   });
 }
 
-// ===== Gestion des titres =====
 function updateTitle() {
   sections.forEach((section, index) => {
     const rect = section.getBoundingClientRect();
@@ -148,7 +142,6 @@ function updateTitle() {
 window.addEventListener('scroll', updateTitle);
 window.addEventListener('load', updateTitle);
 
-// ===== Animation des blocs de formation =====
 const blocs = document.querySelectorAll('.formation_left, .formation_right');
 
 const observer = new IntersectionObserver((entries) => {
@@ -161,7 +154,6 @@ const observer = new IntersectionObserver((entries) => {
 
 blocs.forEach(bloc => observer.observe(bloc));
 
-// ===== Fermeture de la sidebar après clic =====
 const navLinksSidebar = document.querySelectorAll('.nav-links a');
 
 navLinksSidebar.forEach(link => {
@@ -172,7 +164,6 @@ navLinksSidebar.forEach(link => {
   });
 });
 
-// ===== Défilement fluide entre sections =====
 document.querySelectorAll('.nav-links a').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -214,7 +205,6 @@ const items = Array.from(track.children);
 const centralInfo = document.getElementById('centralInfo');
 const clickTexts = document.querySelectorAll('.cliquez');
 
-// Dupliquer les éléments pour le looping infini
 items.forEach(item => {
     const clone = item.cloneNode(true);
     track.appendChild(clone);
@@ -224,7 +214,6 @@ let position = 0;
 const speed = 0.5;
 let paused = false;
 
-// Boucle du carrousel
 function loop() {
     if (!paused) {
         position -= speed;
@@ -236,11 +225,9 @@ function loop() {
 }
 loop();
 
-// Fonction pour afficher texte et vidéo dans centralInfo
 function toggleCentralInfo(item) {
     const videoSrc = item.querySelector('video').getAttribute('src');
 
-    // Fonction pour construire le contenu selon la langue actuelle
     function buildContent() {
         const text = item.getAttribute(`data-${currentLang}2`);
         const listItems = text.split(' - ').filter(t => t.trim() !== "");
@@ -256,14 +243,12 @@ function toggleCentralInfo(item) {
     const htmlContent = buildContent();
 
     if (centralInfo.classList.contains('active') && centralInfo.innerHTML === htmlContent) {
-        // Fermeture
         centralInfo.classList.remove('active');
         setTimeout(() => {
             centralInfo.style.display = 'none';
         }, 400);
         paused = false;
     } else {
-        // Ouverture
         paused = true;
         centralInfo.innerHTML = htmlContent;
         centralInfo.style.display = 'flex';
@@ -272,7 +257,6 @@ function toggleCentralInfo(item) {
             ? "Cliquez sur le texte pour revenir au carrousel"
             : "Click on the text to return to the carousel");
 
-        // Mettre à jour le contenu si la langue change
         switchBtn.addEventListener('click', () => {
             if (centralInfo.classList.contains('active')) {
                 centralInfo.innerHTML = buildContent();
@@ -281,8 +265,6 @@ function toggleCentralInfo(item) {
     }
 }
 
-
-// Ajouter l'événement clic sur vidéos et titres
 const competenceItems = document.querySelectorAll('.competence-video'); 
 competenceItems.forEach(item => {     
     const overlay = item.querySelector('.click-overlay');     
@@ -292,9 +274,6 @@ competenceItems.forEach(item => {
     title.addEventListener('click', () => toggleCentralInfo(item)); 
 });
 
-
-
-// Fermer au clic sur la boîte centrale
 centralInfo.addEventListener('click', () => {
     centralInfo.classList.remove('active');
     setTimeout(() => {
@@ -308,37 +287,33 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
   card.addEventListener('click', () => {
-    const modalId = card.dataset.modal; // récupère l'ID du modal correspondant
+    const modalId = card.dataset.modal; 
     const modal = document.getElementById(modalId);
     openModal(modal);
   });
 });
 
-// Fonction open/close génériques
 function openModal(modal) {
   modal.classList.add('show');
-  modal.dataset.scrollStart = window.scrollY; // pour scroll sensible
+  modal.dataset.scrollStart = window.scrollY; 
 }
 
 function closeModal(modal) {
   modal.classList.remove('show');
 }
 
-// Fermer modal au clic sur le bouton close
 document.querySelectorAll('.modal .close').forEach(btn => {
   btn.addEventListener('click', () => {
     closeModal(btn.closest('.modal'));
   });
 });
 
-// Fermer si clic en dehors
 window.addEventListener('click', event => {
   if (event.target.classList.contains('modal')) {
     closeModal(event.target);
   }
 });
 
-// Fermer si scroll > 50px depuis ouverture
 window.addEventListener('scroll', () => {
   document.querySelectorAll('.modal.show').forEach(modal => {
     const scrollStart = parseFloat(modal.dataset.scrollStart);
@@ -357,13 +332,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         const video = entry.target;
         video.play();
-        obs.unobserve(video); // plus besoin d'observer
+        obs.unobserve(video); 
       }
     });
-  }, { threshold: 0.25 }); // 25% visible pour lancer la vidéo
+  }, { threshold: 0.25 }); 
 
   videos.forEach(video => {
-    video.pause();        // on s'assure qu'elles ne jouent pas avant
+    video.pause();        
     observer.observe(video);
   });
 });
