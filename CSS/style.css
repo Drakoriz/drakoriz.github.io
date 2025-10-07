@@ -15,17 +15,17 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.8s ease; /* fade-out smooth pour le conteneur */
+  transition: opacity 0.8s ease; 
 }
 
 #preloader.hidden {
   opacity: 0;
-  pointer-events: none; /* empêche les interactions pendant le fade-out */
+  pointer-events: none; 
 }
 
 #preloader img {
   width: 150px;
-  animation: moveUp 1s ease forwards 1.5s; /* animation de l'image */
+  animation: moveUp 1s ease forwards 1.5s;
 }
 
 @keyframes moveUp {
@@ -52,7 +52,7 @@
   align-items: center;
   padding: 0 15px;
   z-index: 500;
-  gap: 5px; /* espace entre les éléments */
+  gap: 5px;
 }
 
 /* Titre fixe en haut et centré */
@@ -71,16 +71,15 @@
     text-transform:uppercase;
       margin-bottom:14px;
     line-height:1.15;
-    /* Transition pour l'apparition/disparition */
     opacity: 1;
     transition: opacity 0.6s ease, transform 0.5s ease;
 }
 
 
 .title.hidden {
-    opacity: 0;                  /* Rend invisible */
-    transform: translateX(-50%) translateY(-20px); /* Légèrement vers le haut */
-    pointer-events: none;        /* Empêche les interactions */
+    opacity: 0;              
+    transform: translateX(-50%) translateY(-20px);
+    pointer-events: none; 
 }
 
 /* Logo à gauche */
@@ -138,16 +137,14 @@
   }
   .title {
     top: 5%;
-    right: 10%;           /* à 5px du bord droit */
-    left: auto;            /* supprimer le left à 50% */
-    transform: translateY(-50%); /* pour centrer verticalement */
-    text-align: right;     /* texte aligné à droite */
+    right: 10%;      
+    left: auto;       
+    transform: translateY(-50%); 
+    text-align: right;    
   }
 }
 
 
-
-/* Décalage du contenu pour ne pas passer sous la navbar */
 body {
 background-color: white;
       font-family: "Montserrat";
@@ -156,8 +153,8 @@ background-color: white;
 }
 
 body.loading {
-  position: fixed;   /* bloque le scroll */
-  width: 100%;       /* évite un petit “jump” horizontal */
+  position: fixed;   
+  width: 100%;      
   overflow: hidden;
 }
 html {
@@ -167,7 +164,7 @@ html {
 
 /* 3. Container principal */
 * {
-  max-width: 100vw; /* Rien ne dépasse la largeur viewport */
+  max-width: 100vw; 
 }
 
 /* SIDEBARRRRRRRRRRRRRRRRRRRRRRR */
@@ -179,17 +176,17 @@ pointer-events: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: transparent; /* fond retiré */
+  background-color: transparent;
   padding: 30px 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 550;
-  text-align: center; /* texte centré */
-  color: inherit; /* conserve la couleur de texte parente */
+  text-align: center; 
+  color: inherit; 
   
 }
 .sidebar.active {
-  pointer-events: auto; /* autorise les clics quand visible */
+  pointer-events: auto;
   opacity: 1;
 }
 /* Liens et éléments interactifs */
@@ -206,7 +203,7 @@ pointer-events: none;
    transition: transform 0.5s ease;
 }
 .sidebar ul {
-    list-style: none; /* Supprime les puces */
+    list-style: none; 
 
 }
 
@@ -251,14 +248,13 @@ pointer-events: none;
     width: 0%;
     height: 1px;
     background-color: #fff;
-    transition: width 1.7s ease; /* animation de la barre */
+    transition: width 1.7s ease; 
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
 
-/* Sidebar visible */
 .sidebar.active {
   opacity: 1;
   visibility: visible;
@@ -278,7 +274,6 @@ pointer-events: none;
   z-index: 550;
 }
 
-/* Backdrop visible */
 .backdrop.active {
   opacity: 1;
   visibility: visible;
@@ -287,8 +282,8 @@ pointer-events: none;
 /* Bouton fermer */
 .close-icon {
     position: absolute;
-    bottom: 400px;          /* remonte le bouton */
-    right: 150px;       /* à droite */
+    bottom: 400px;      
+    right: 150px;      
     font-size: 30px;
     cursor: pointer;
     background: none;
@@ -296,13 +291,13 @@ pointer-events: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;          /* espace entre l'icône et le texte */
+    gap: 8px;          
     color: #fff;
 }
 
 .close-text {
     font-family: "Montserrat";
-    font-size: 20px;   /* taille du texte "Close" */
+    font-size: 20px;  
 }
 
 
@@ -315,18 +310,18 @@ pointer-events: none;
   justify-content: center;
   padding: 60px 0;
   width: 100%;
-  overflow: hidden; /* empêche tout débordement horizontal */
+  overflow: hidden; 
 }
 
 .video-frame {
-  position: absolute;   /* Fixe le cadre à l’écran */
+  position: absolute;  
   top: 0;
   left: 0;
   width: 100%;
-  height: 800px;           /* hauteur fixe du cadre */
-  overflow: hidden;        /* empêche la vidéo de dépasser */
-  background-color: black; /* fond si la vidéo tarde à charger */
-  z-index: -1;             /* en dessous des autres éléments (comme navbar ou contenu) */
+  height: 800px;       
+  overflow: hidden;      
+  background-color: black;
+  z-index: -1;             
 }
 
 .video-frame video {
@@ -369,35 +364,34 @@ pointer-events: none;
 
 .box {
     position: absolute;
-    top: 76%; /* Réduire la distance depuis le haut */
+    top: 76%; 
     left: 50%;
     transform: translate(-50%, -50%);
-/* Ajuster la hauteur de la boîte */
-    cursor: pointer; /* Ajouter un curseur pointer pour indiquer que la boîte est cliquable */
-    z-index: 2; /* Assurez-vous que la boîte est au-dessus des autres éléments */
+    cursor: pointer; 
+    z-index: 2; 
 }
 
 .box span {
     display: block;
-    width: 55px; /* Ajustez la largeur pour rendre les flèches plus grandes */
-    height: 55px; /* Correction de la propriété height */
-    border-bottom: 1px solid #fff; /* Augmentez l'épaisseur de la bordure */
-    border-right: 1px solid #fff; /* Augmentez l'épaisseur de la bordure */
+    width: 55px; 
+    height: 55px; 
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
     transform: rotate(45deg);
-    margin: -5px; /* Ajustez la marge pour centrer les flèches correctement */
+    margin: -5px; 
     animation: animate 4s infinite;
 }
 
 .box span:nth-child(1) {
-    animation-delay: 1.2s; /* Ajouter un retard à la première flèche */
+    animation-delay: 1.2s;
 }
 
 .box span:nth-child(2) {
-    animation-delay: 0.6s; /* Ajouter un retard plus long à la deuxième flèche */
+    animation-delay: 0.6s;
 }
 
 .box span:nth-child(3) {
-    animation-delay: 0.2s; /* Ajouter un retard le plus long à la troisième flèche */
+    animation-delay: 0.2s;
 }
 
 @keyframes animate {
@@ -417,12 +411,12 @@ pointer-events: none;
 @media screen and (max-width: 600px) {
 .box span {
     display: block;
-    width: 40px; /* Ajustez la largeur pour rendre les flèches plus grandes */
-    height: 40px; /* Correction de la propriété height */
-    border-bottom: 1px solid #fff; /* Augmentez l'épaisseur de la bordure */
-    border-right: 1px solid #fff; /* Augmentez l'épaisseur de la bordure */
+    width: 40px; 
+    height: 40px;
+    border-bottom: 1px solid #fff; 
+    border-right: 1px solid #fff; 
     transform: rotate(45deg);
-    margin: -10px; /* Ajustez la marge pour centrer les flèches correctement */
+    margin: -10px;
     animation: animate 3s infinite;
 }
 }
@@ -431,54 +425,48 @@ pointer-events: none;
 
 
 /* ===== Section ===== */
-/* Section pleine hauteur et centrage */
 
 .section {
-  min-height: 100vh; /* Hauteur minimale = 100% de la hauteur de la fenêtre */
-  width: 100%; /* Prend toute la largeur disponible */
-  display: flex; /* Active Flexbox pour ses enfants */
-  justify-content: center; /* Centre horizontalement le contenu */
-  align-items: center; /* Centre verticalement le contenu */
-  position: relative; /* Permet de positionner des éléments enfants en absolute relativement à ce container */
-  padding: 2rem; /* Ajoute un espace interne de 2rem autour du contenu */
-  box-sizing: border-box; /* Inclut le padding dans la largeur et hauteur totales */
+  min-height: 100vh; 
+  width: 100%; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: relative; 
+  padding: 2rem; 
+  box-sizing: border-box; 
   
 }
 
-
-
 /* Container centré et limité en largeur */
 .container {
-  max-width: 900px; /* Largeur maximale pour éviter que le contenu ne s’étale trop */
-  width: 100%; /* Prend toute la largeur disponible jusqu’à 900px */
-  display: flex; /* Active Flexbox pour ses enfants */
-  flex-direction: column; /* Les enfants sont empilés verticalement */
-  align-items: center; /* Centre les enfants horizontalement */
-  gap: 1.25rem; /* Espace vertical entre les enfants */
-  padding-top: 4rem; /* Laisse un espace sous le titre fixe pour ne pas le chevaucher */
-  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+  max-width: 900px; 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  gap: 1.25rem; 
+  padding-top: 4rem; 
+  box-sizing: border-box;
 }
 /* Présentation */
-/* Label identité positionné naturellement à gauche */
-
 
 #identity {
-  margin-left: 0; /* supprimer le margin fixe */
-  align-self: flex-start; /* aligne le texte à gauche du container */
-    font-family: Didot; /* Police du label */
-    font-size: 1.25rem; /* Taille du texte */
-    color: #000; /* Couleur du texte : noir */
+  margin-left: 0; 
+  align-self: flex-start; 
+    font-family: Didot; 
+    font-size: 1.25rem; 
+    color: #000; 
 }
-/* Paragraphes centrés et responsive */
 .centered {
 
   font-family: Montserrat;
   margin-right: 25%;
-  width: 60%; /* Prend toute la largeur du container parent */
-  max-width: 100%; /* Largeur maximale pour plus de lisibilité */
-  line-height: 1.55; /* Hauteur de ligne pour améliorer la lecture */
-  color:#555; /* Couleur du texte légèrement moins noire */
-  font-size: 1rem; /* Taille de texte standard */
+  width: 60%; 
+  max-width: 100%; 
+  line-height: 1.55;
+  color:#555; 
+  font-size: 1rem; 
 }
 
 
@@ -522,22 +510,21 @@ height: 65%;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: -80px; /* chevauchement vertical */
+  margin-bottom: -80px; 
 }
 
 /* Déplacement horizontal avec transform */
-/* Styles initiaux pour l'animation */
 .formation_left,
 .formation_right {
-  opacity: 0; /* invisible au départ */
-  transform: translateY(50px); /* légèrement décalé vers le bas */
+  opacity: 0;
+  transform: translateY(50px); 
   transition: all 0.8s ease-out;
 }
 
 /* Quand le bloc est visible */
 .formation_left.visible {
   opacity: 1;
-  transform: translateY(0) translateX(-250px); /* garde le zigzag horizontal */
+  transform: translateY(0) translateX(-250px); 
 }
 
 .formation_right.visible {
@@ -566,29 +553,28 @@ height: 65%;
 
 .description_2 {
   margin-top: 10px;
-  font-family: Montserrat;/* Prend toute la largeur du container parent */
-  max-width: 700px; /* Largeur maximale pour plus de lisibilité */
-  line-height: 1.55; /* Hauteur de ligne pour améliorer la lecture */
-  color:#555; /* Couleur du texte légèrement moins noire */
-  font-size: 1rem; /* Taille de texte standard */
+  font-family: Montserrat;
+  max-width: 700px; 
+  line-height: 1.55; 
+  color:#555; 
+  font-size: 1rem; 
 }
 @media (max-width: 1024px) {
-  /* Supprimer le zigzag et mettre les blocs en colonne */
   .formation-container {
-    flex-direction: column; /* déjà column mais on confirme */
+    flex-direction: column; 
     align-items: center;
   }
 
   .formation_left.visible,
   .formation_right.visible {
-    transform: translateY(0); /* plus de translation horizontale */
+    transform: translateY(0); 
   }
 
   .formation_left,
   .formation_right {
-    width: 90%; /* blocs plus larges mais centrés */
-    max-width: 400px; /* optional pour ne pas dépasser */
-    margin-bottom: 30px; /* espace vertical entre les blocs */
+    width: 90%; 
+    max-width: 400px;
+    margin-bottom: 30px;
   }
 }
 
@@ -637,12 +623,10 @@ height: 65%;
 
 
 @media (max-width: 1000px) {
-  /* Cache le panneau de droite */
   .experience-left {
     display: none;
   }
 
-  /* Ajuste la mise en page pour que l’image prenne toute la largeur */
   .container-experience {
     flex-direction: column;
     align-items: center;
@@ -657,9 +641,9 @@ height: 65%;
 
 /* Competences */
 .cliquez {
-  font-family: Didot; /* Police du label */
-  font-size: 0.8rem; /* Taille du texte */
-  color: #555; /* Couleur du texte : noir */
+  font-family: Didot; 
+  font-size: 0.8rem; 
+  color: #555; 
   margin-right: 20px;
 }
 .carousel {
@@ -688,7 +672,7 @@ height: 65%;
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-background-color: black; /* fond si la vidéo tarde à charger */
+background-color: black; 
 z-index: -1;    
 }
 
@@ -697,8 +681,8 @@ z-index: -1;
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* 0.4 = opacité, ajuste à ton goût */
-  pointer-events: none; /* permet les clics sur la vidéo si besoin */
+  background: rgba(0, 0, 0, 0.4); 
+  pointer-events: none; 
 }
 
 /* le titre */
@@ -712,7 +696,7 @@ z-index: -1;
   font-size: 2rem;
   padding: 8px 12px;
   border-radius: 6px;
-  z-index: 1; /* pour être au-dessus de l’overlay */
+  z-index: 1; 
 }
 .competence-title {
   cursor: pointer;
@@ -733,8 +717,8 @@ font-family: Didot;
   display: none;
   opacity: 0;
   z-index: 20;
-  width: 100%;            /* ✅ prend la largeur du carousel */
-  height: 100%;           /* s’adapte au contenu */
+  width: 100%;       
+  height: 100%;          
   align-items: center;
   justify-content: center;
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -749,12 +733,12 @@ font-family: Didot;
 
 .central-video-text {
     display: flex;
-    gap: 20px; /* espace entre vidéo et texte */
+    gap: 20px; 
     align-items: flex-start;
 }
 
 .central-video-text video {
-    max-width: 65%; /* ajuster selon tes besoins */
+    max-width: 65%;
     height: 100%;
     border-radius: 10px;
 }
@@ -782,40 +766,36 @@ font-family: Didot;
 .central-info {
 font-size: 1rem;
 }
-  /* Masquer les vidéos dans central-info */
   .central-video-text video {
     display: none;
   }
 
-
-  /* Ajuster la section texte pour qu'elle occupe tout l'espace disponible */
   .central-video-text {
-    flex-direction: column; /* empile le texte verticalement */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
   }
 
   .central-video-text .central-text {
-    width: 100%; /* prend toute la largeur disponible */
-    text-align: center; /* centre le texte */
+    width: 100%; 
+    text-align: center; 
   }
 }
 .click-overlay {
     position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
-    background: transparent; /* invisible */
+    inset: 0; 
+    background: transparent; 
     cursor: pointer;
-    z-index: 10; /* au-dessus de la vidéo mais sous le titre */
+    z-index: 10; 
 }
 
 
 /* Réalisations */
 
-/* Mise en page de la grille */
 /* Grille */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* max 3 colonnes */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
   gap: 20px;
   padding: 20px;
 }
@@ -824,8 +804,8 @@ font-size: 1rem;
 .card {
   background: #fff;
   border: 1px solid #e5e5e5;
-  border-bottom-left-radius: 12px;  /* coin inférieur gauche */
-  border-bottom-right-radius: 12px; /* coin inférieur droit */
+  border-bottom-left-radius: 12px; 
+  border-bottom-right-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
@@ -863,7 +843,7 @@ font-size: 1rem;
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4); /* assombrit l'image */
+  background: rgba(0,0,0,0.4);
   z-index: 1;
 }
 
@@ -911,10 +891,10 @@ font-size: 1rem;
 }
 
 .card-keywords {
-  font-family: 'Didot'; /* police Didot */
-  margin: 0 0 8px 0;           /* espace sous chaque mot-clé */
-  font-size: 16px;              /* taille du texte */
-  color: #111;                  /* couleur du texte */
+  font-family: 'Didot'; 
+  margin: 0 0 8px 0;           
+  font-size: 16px;              
+  color: #111;                  
 }
 /* Pour les écrans de 600px ou moins */
 @media (max-width: 1200px) {
@@ -922,7 +902,7 @@ font-size: 1rem;
 }
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* max 3 colonnes */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
 
   }
 }
@@ -977,7 +957,7 @@ font-size: 1rem;
    min-height: 900px; 
   border-radius: 12px;
   overflow: hidden;
-  background: #fff; /* Le fond global est blanc */
+  background: #fff; 
   position: relative;
   transform: translateY(-20px);
   transition: transform 0.3s ease;
@@ -1037,9 +1017,9 @@ font-size: 1rem;
 }
 /* Bouton dans le modal */
 .modal-button {
-  color: black;           /* couleur du lien */
-  font-family: Didot, serif; /* police Didot */
-  text-decoration: None; /* optionnel, pour indiquer que c'est un lien */
+  color: black;           
+  font-family: Didot, serif;
+  text-decoration: None; 
   cursor: pointer;
   transition: color 0.3s ease;
 }
