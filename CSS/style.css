@@ -927,7 +927,7 @@ font-size: 1rem;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .card-media .card-overlay .card-title {
     font-size: 10px;
     letter-spacing: 0.03em;
