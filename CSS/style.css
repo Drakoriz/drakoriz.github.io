@@ -916,6 +916,31 @@ font-size: 1rem;
   font-size: 16px;              /* taille du texte */
   color: #111;                  /* couleur du texte */
 }
+/* Pour les écrans de 600px ou moins */
+@media (max-width: 1200px) {
+  .card-keywords { font-size: 0.7rem; }
+}
+
+@media (max-width: 900px) {
+  .card-media .card-overlay .card-title {
+    font-size: 10px;
+    letter-spacing: 0.03em;
+  }
+  .card-media .card-overlay .card-date {
+    font-size: 12px;
+  }
+  .card-content .card-title {
+    font-size: 14px;
+  }
+  .card-content .card-date {
+    font-size: 12px;
+  }
+  .card-keywords { font-size: 0.5rem; }
+}
+
+@media (max-width: 700px) {
+  .card-keywords { font-size: 0.3rem; }
+}
 
 
 /* Modal overlay */
